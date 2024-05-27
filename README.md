@@ -6,15 +6,15 @@ Scenario: An user (e.g. teacher, student, etc) installs their Learning Managemen
 
 Terminology:
 
-* Learning Management System (LMS) app: the primary app used to manage course enrolments, student information, etc e.g. [Moodle](https://moodle.org), [Ustad Mobile](https://www.ustadmobile.com), etc.
-* Consumer (third party) app: an education app (e.g. a math app, other subject app, library app, etc) that will consume information provided from the LMS app (e.g. student enrolment information, student progress, etc).
+* Provider app: the primary app used to manage course enrolments, student information, typically a Learning Management System (LMS) e.g. [Moodle](https://moodle.org), [Ustad Mobile](https://www.ustadmobile.com), etc. or Student Information System (SIS) 
+* Consumer app: an education app (e.g. a math app, other subject app, library app, etc) that will consume information provided from the provider app (as above).
 
 # Components
 
-* [Offline single sign on and REST API access](SINGLE-SIGN-ON-OFFLINE-API.md) - Allows a consumer (third party) app to request a token from the LMS without requiring Internet access and make [OneRoster](https://www.1edtech.org/standards/oneroster) and [xAPI](https://www.xapi.com) calls to the LMS app without requiring Internet access.
-* [Resiliant Asset Delivery (RAD)](RAD.md) - Allows a consumer (third party) or LMS app to retrieve assets as flexibly as possible; this includes loading via USB stick, retrieving data from nearby devices instead of the Internet where possible to reduce bandwidth usage (e.g. download once instead of 30 times when there are 30 users), and opting in (with user consent) to using a caching http proxy (e.g. if provided on a school network) to load assets that do not contain personal information.
+* [Offline single sign on and REST API access](SINGLE-SIGN-ON-OFFLINE-API.md) - Allows a consumer (third party) app to request a token from the LMS without requiring Internet access and make [OneRoster](https://www.1edtech.org/standards/oneroster) and [xAPI](https://www.xapi.com) calls to the provider app without requiring Internet access.
+* [Resiliant Asset Delivery (RAD)](RAD.md) - Allows a consumer (third party) or provider app to retrieve assets as flexibly as possible; this includes loading via USB stick, retrieving data from nearby devices instead of the Internet where possible to reduce bandwidth usage (e.g. download once instead of 30 times when there are 30 users), and opting in (with user consent) to using a caching http proxy (e.g. if provided on a school network) to load assets that do not contain personal information.
 
-# LMS Requirements
+# Provider app requirements
 
 * MUST provide operating system manifest information such that consumer apps can detect the presence of the app.
 * When single sign on is requested, MUST show a user interface (if required) to allow the user to accept or decline the request. This can include enforcement of organizational policies
