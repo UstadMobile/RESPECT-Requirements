@@ -9,8 +9,10 @@ Roughly:
 Note: a standard open-source library can implement the above so the developer will need to do only two things: 1) send an intent to request the token and get a localhost URL and 2) send their http requests to the provided URL.
 
 ## iOS
-To be determined
+To be determined, possibly:
 
+* Provider app login works through using a url scheme where the consumer specifies a return address (e.g. similar to the use of OAuth).
+* Consumer app uses [XPC](https://developer.apple.com/documentation/xpc) to send requests
 
 ## Windows
 To be determined
