@@ -23,20 +23,24 @@ Terminology:
 
 * MUST provide operating system manifest information such that consumer apps can detect the presence of the app.
 * When single sign on is requested, MUST show a user interface (if required) to allow the user to accept or decline the request. This can include enforcement of organizational policies
-* MUST return a result that includes a localhost http url that the consumer app can use to perform requests.
+* MUST return a result that 
 * MUST provide the OneRoster Roster and Gradebook API to allow a consumer app with a token to store/retrieve information about classes, enrolments, grade level, and student results over the local http url.
 * MUST Provide the Experience API on the local http url to allow a consumer app with a token to store xAPI  statements and all xAPI endpoints (State, Activity Profile, etc).
 * MAY synchronize user data over a local network based on its own security policies to enable users on another device (e.g. a teacher monitoring student progress) to see student progress data without requiring an Internet connection.
 
 # Consumer app requirements
 
-* MUST support offline single sign on such that a user can enter the app without requiring Internet access or creation of a separate account.
-* MUST use the OneRoster API to retrieve information defined using the OneRoster standard (e.g. grade level, enrolments etc).
-* MUST store all profile information required for the user to resume subsequent sessions using the OneRoster and/or Experience API (e.g. to allow the user to resume a session on a different device).
-* MUST store learner progress data using the OneRoster Result API.
-* SHOULD store granular learner activity data using Experience API statements (e.g. when a user answers a question).
-* MAY ask the user additional information that is not part of the OneRoster standard (e.g. "How much do you like math?").
-* MUST use Resiliant Asset Delivery (RAD) to load any assets (e.g. images, textures, audio, video, etc) required that are not contained within the installed app itself.
+* Single sign-on:
+  * MUST support single sign using [OAuth](https://oauth.net/2/) which MUST work offline if the provider app is installed as per [HTTP/IPC Spec](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow).
+  * MUST use [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow) to access REST APIs offline where the service is offered by the provider app
+  * MUST support using the OneRoster API to retrieve information defined using the OneRoster standard (e.g. grade level, enrolments etc) where this information is required, except if the consumer app is only used via the provider app (e.g. Scenario B only)
+  * MAY ask the user additional information that is not part of the OneRoster standard (e.g. "How much do you like math?")  
+* Progress reporting
+  * MUST store all profile information required for the user to resume subsequent sessions using the OneRoster and/or Experience API (e.g. to allow the user to resume a session on a different device).
+  * MUST store learner progress data using the [LTI Assignment and Gradebook Service (AGS)](https://www.imsglobal.org/spec/lti-ags/v2p0).
+  * SHOULD store granular learner activity data using [Experience API statements](https://www.xapi.com/) (e.g. when a user answers a question) or [Caliper Analytics](https://www.1edtech.org/standards/caliper).
+* Asset download
+  * MUST support the use of an HTTP proxy (e.g. which could implement [Resilient Asset Delivery](RAD.md)).
 
 
 
