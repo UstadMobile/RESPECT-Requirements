@@ -46,6 +46,7 @@ Terminology:
   * MUST be able to function fully offline where LTI and OneRoster are provided via [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) and any http assets have been pre-downloaded.
 * Other
   * Android apps SHOULD follow Google's [Build for Billions](https://developer.android.com/docs/quality-guidelines/build-for-billions) guidelines including app size and startup time.
+  * Android apps SHOULD use [WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager) to schedule sending any pending data such that data will be transmitted when the user is next reconnected data will be sent automatically without requiring the user to directly open the app itself.
 
 
 
