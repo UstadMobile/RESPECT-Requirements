@@ -16,7 +16,7 @@ Terminology:
 
 # Components
 
-* [Offline single sign on and REST API access](SINGLE-SIGN-ON-OFFLINE-API.md) - Allows a consumer (third party) app to request a token from the LMS without requiring Internet access and make [OneRoster](https://www.1edtech.org/standards/oneroster) and [xAPI](https://www.xapi.com) calls to the provider app without requiring Internet access.
+* [HTTP-IPC]([SINGLE-SIGN-ON-OFFLINE-API.md](https://github.com/UstadMobile/HTTP-IPC-Spec)) - Allows a consumer app to communicate with the provider app without requiring Internet access and make API calls using existing standards such as OneRoster, LTI, xAPI, etc.
 * [Resiliant Asset Delivery (RAD)](RAD.md) - Allows a consumer (third party) or provider app to retrieve assets as flexibly as possible; this includes loading via USB stick, retrieving data from nearby devices instead of the Internet where possible to reduce bandwidth usage (e.g. download once instead of 30 times when there are 30 users), and opting in (with user consent) to using a caching http proxy (e.g. if provided on a school network) to load assets that do not contain personal information.
 
 # Provider app requirements
