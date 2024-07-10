@@ -41,6 +41,7 @@ Terminology:
   * SHOULD store granular learner activity data using [Experience API statements](https://www.xapi.com/) (e.g. when a user answers a question) or [Caliper Analytics](https://www.1edtech.org/standards/caliper).
 * Asset download
   * MUST download all assets via HTTP/HTTPS GET requests (e.g.such that [Resilient Asset Delivery](RAD.md) can be used). The body of each URL must be the same regardless of request headers (e.g. it must not vary based on client types etc) such that it can be shared with other devices.
+  * HTTP requests for assets that do not contain sensitive information MUST contain the ```cache-control: public``` directive in the response.
 * Other
   * Android apps should follow Google's [Build for Billions](https://developer.android.com/docs/quality-guidelines/build-for-billions) guidelines including app size and startup time.
 
