@@ -40,8 +40,9 @@ Terminology:
   * MUST store learner progress data using the [LTI Assignment and Gradebook Service (AGS)](https://www.imsglobal.org/spec/lti-ags/v2p0).
   * SHOULD store granular learner activity data using [Experience API statements](https://www.xapi.com/) (e.g. when a user answers a question) or [Caliper Analytics](https://www.1edtech.org/standards/caliper).
 * Asset download
-  * MUST support the use of an HTTP proxy (e.g. which could implement [Resilient Asset Delivery](RAD.md)).
-
+  * MUST download all assets via HTTP/HTTPS GET requests (e.g.such that [Resilient Asset Delivery](RAD.md) can be used). The body of each URL must be the same regardless of request headers (e.g. it must not vary based on client types etc) such that it can be shared with other devices.
+* Other
+  * Android apps should follow Google's [Build for Billions](https://developer.android.com/docs/quality-guidelines/build-for-billions) guidelines including app size and startup time.
 
 
 
