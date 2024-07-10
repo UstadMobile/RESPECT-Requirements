@@ -47,6 +47,7 @@ Terminology:
 * Other
   * Android apps SHOULD follow Google's [Build for Billions](https://developer.android.com/docs/quality-guidelines/build-for-billions) guidelines including app size and startup time.
   * Android apps SHOULD use [WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager) to schedule sending any pending data such that data will be transmitted when the user is next reconnected data will be sent automatically without requiring the user to directly open the app itself.
+  * Android apps MUST NOT require proprietary services e.g. Google Play Services and must work on Android (AOSP) derivative operating systems (e.g. OpenHarmony OS)
 
 
 
