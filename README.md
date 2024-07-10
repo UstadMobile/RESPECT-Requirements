@@ -42,8 +42,10 @@ Terminology:
 * Asset download
   * MUST download all assets via HTTP/HTTPS GET requests (e.g.such that [Resilient Asset Delivery](RAD.md) can be used). The body of each URL must be the same regardless of request headers (e.g. it must not vary based on client types etc) such that it can be shared with other devices.
   * HTTP requests for assets that do not contain sensitive information MUST contain the ```cache-control: public``` directive in the response.
+* Offline support
+  * MUST be able to function fully offline where LTI and OneRoster are provided via [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) and any http assets have been pre-downloaded.
 * Other
-  * Android apps should follow Google's [Build for Billions](https://developer.android.com/docs/quality-guidelines/build-for-billions) guidelines including app size and startup time.
+  * Android apps SHOULD follow Google's [Build for Billions](https://developer.android.com/docs/quality-guidelines/build-for-billions) guidelines including app size and startup time.
 
 
 
