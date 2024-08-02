@@ -24,7 +24,9 @@ Terminology:
 * Installed size MUST be not more than 25% higher Google build for billions guidelines
 * 15 minutes of usage MUST use less than 25MB of data on average
   * E.g. A parent with a bundle of half the average data usage in Sub-Saharan Africa allocates 20% of their data to education and has 5 children, each of whom use the app for 15mins/day at home.
-  * Data downloaded using with the ```cache-control: public``` where a user can opt-in to using a proxy cache  (e.g. as per [Resiliant Asset Delivery (RAD)](RAD.md)) shall not count towards the total. 
+  * Data downloaded using with the ```cache-control: public``` where a user can opt-in to using a proxy cache  (e.g. as per [Resiliant Asset Delivery (RAD)](RAD.md)) shall not count towards the total.
+* 15 minutes of usage by 5 devices carrying out the same activities nearby with WiFi and Bluetooth switched on must use less than 35MB of data
+  * E.g. the app should support peer-to-peer sharing of assets that do not contain personally identifiable information in school scenarios to reduce bandwidth usage. 
 * MUST allow users to download key activities (e.g. lessons) for later use offline. 
 
 # Provider app requirements
