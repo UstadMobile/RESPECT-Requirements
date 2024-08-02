@@ -1,13 +1,12 @@
-# EduCHIP
+# EduCHIP badge
 
-The EduCHIP recipe is a methodology to combine existing edtech and HTTP standards to create apps and content that can work in low resource environments (e.g. limited/no connectivity) AND interoperate so everything *just works* together instead of educators having to re-enter class lists and check multiple dashboards.
+EduCHIP badge is a standard that combines existing edtech and HTTP standards to create apps and content that can work in low resource environments (e.g. limited/no connectivity) AND interoperate so everything *just works* together instead of educators having to re-enter class lists and check multiple dashboards.
 
 Scenario A: A user (e.g. teacher, student, etc) installs their Learning Management System (LMS) app and a third-party API consumer app (e.g. a math app etc). The student opens the math app and taps "sign in with LMS app". They can then accept/decline permissions requested by the math app. If they accept, they return to the math app. The math app can now access their profile information (e.g. name, grade, etc) without requiring Internet or access or having to re-enter information. The math app can retrieve and save learner progress data from the LMS app. If the student opens the math app on a different device, the LMS app takes care of syncing the latest data, so the user can resume from where they left off on any device. Communication between the apps does not require Internet access.
 
 This flow achieves the same result as using [OAuth](https://oauth.net/2/) single sign-on and online access to OneRoster and Experience API without requiring Internet access.
 
 Scenario B: A user (e.g. teacher, student, etc) installs their Learning Management System app and a third party API consumer app. They open their course in the LMS app which lists lessons they are expected to complete. The LMS app launches the math app (e.g. using an Intent) and includes the information the math app requires to access the user learner profile and the id of the lesson. The learner completes their lesson in the math app and then returns to the LMS app when finished.
-
 
 Terminology:
 
@@ -19,11 +18,20 @@ Terminology:
 * [HTTP-IPC]([SINGLE-SIGN-ON-OFFLINE-API.md](https://github.com/UstadMobile/HTTP-IPC-Spec)) - Allows a consumer app to communicate with the provider app without requiring Internet access and make API calls using existing standards such as OneRoster, LTI, xAPI, etc.
 * [Resiliant Asset Delivery (RAD)](RAD.md) - Allows a consumer (third party) or provider app to retrieve assets as flexibly as possible; this includes loading via USB stick, retrieving data from nearby devices instead of the Internet where possible to reduce bandwidth usage (e.g. download once instead of 30 times when there are 30 users), and opting in (with user consent) to using a caching http proxy (e.g. if provided on a school network) to load assets that do not contain personal information.
 
+# Common requirements
+
+* Simple to use (metrics to be determined e.g. number of clicks to accomplish common tasks)
+* Installed size MUST be not more than 25% higher Google build for billions guidelines
+* 15 minutes of usage MUST use less than 25MB of data on average
+  * E.g. A parent with a bundle of half the average data usage in Sub-Saharan Africa allocates 20% of their data to education and has 5 children, each of whom use the app for 15mins/day at home.
+  * Data downloaded using with the ```cache-control: public``` where a user can opt-in to using a proxy cache  (e.g. as per [Resiliant Asset Delivery (RAD)](RAD.md)) shall not count towards the total. 
+* MUST allow users to download key activities (e.g. lessons) for later use offline. 
+
 # Provider app requirements
 
 * MUST provide operating system manifest information such that consumer apps can detect the presence of the app.
 * When single sign on is requested, MUST show a user interface (if required) to allow the user to accept or decline the request. This can include enforcement of organizational policies
-* MUST return a result that 
+* MUST return a result that provides an [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow) service
 * MUST provide the OneRoster Roster and Gradebook API to allow a consumer app with a token to store/retrieve information about classes, enrolments, grade level, and student results over the local http url.
 * MUST Provide the Experience API on the local http url to allow a consumer app with a token to store xAPI  statements and all xAPI endpoints (State, Activity Profile, etc).
 * MAY synchronize user data over a local network based on its own security policies to enable users on another device (e.g. a teacher monitoring student progress) to see student progress data without requiring an Internet connection.
