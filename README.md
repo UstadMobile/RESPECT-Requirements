@@ -1,6 +1,6 @@
-# EduChip-Recipe
+# EduCHIP
 
-The EduChip recipe is a methodology to combine existing edtech and HTTP standards to create apps and content that can work in low resource environments (e.g. limited/no connectivity) AND interoperate so everything *just works* together instead of educators having to re-enter class lists and check multiple dashboards.
+The EduCHIP recipe is a methodology to combine existing edtech and HTTP standards to create apps and content that can work in low resource environments (e.g. limited/no connectivity) AND interoperate so everything *just works* together instead of educators having to re-enter class lists and check multiple dashboards.
 
 Scenario A: A user (e.g. teacher, student, etc) installs their Learning Management System (LMS) app and a third-party API consumer app (e.g. a math app etc). The student opens the math app and taps "sign in with LMS app". They can then accept/decline permissions requested by the math app. If they accept, they return to the math app. The math app can now access their profile information (e.g. name, grade, etc) without requiring Internet or access or having to re-enter information. The math app can retrieve and save learner progress data from the LMS app. If the student opens the math app on a different device, the LMS app takes care of syncing the latest data, so the user can resume from where they left off on any device. Communication between the apps does not require Internet access.
 
