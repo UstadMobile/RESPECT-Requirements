@@ -10,8 +10,8 @@ Scenario B: A user (e.g. teacher, student, etc) installs their Learning Manageme
 
 Terminology:
 
-* Provider app: the primary app used to manage course enrolments, student information, typically a Learning Management System (LMS) e.g. [Moodle](https://moodle.org), [Ustad Mobile](https://www.ustadmobile.com), etc. or Student Information System (SIS) 
-* Consumer app: an education app (e.g. a math app, other subject app, library app, etc) that will consume information provided from the provider app (as above).
+* **Provider app**: the primary app used to manage course enrolments, student information, typically a Learning Management System (LMS) e.g. [Moodle](https://moodle.org), [Ustad Mobile](https://www.ustadmobile.com), etc. or Student Information System (SIS) 
+* **Consumer app**: an education app (such as courseware, eg a math app, other subject app, library app, etc) that will consume information provided from the provider app (as above).
 
 # Components
 
