@@ -30,7 +30,7 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
 * [HTTP-IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) - Allows a consumer app to communicate with the provider app without requiring Internet access and make API calls using existing standards such as OneRoster, LTI, xAPI, etc.
 * [Resiliant Asset Delivery (RAD)](RAD.md) - Allows apps to retrieve assets (e.g files over http) as flexibly as possible; this includes loading via USB stick, retrieving data from nearby devices instead of the Internet where possible to reduce bandwidth usage (e.g. download once instead of 30 times when there are 30 users), and opting in (with user consent) to using a caching http proxy (e.g. if provided on a school network) to load assets that do not contain personal information.
 
-# Common requirements
+# Common Requirements
 
 * Simple to use (metrics to be determined e.g. number of clicks to accomplish common tasks)
 * For all HTTP downloads that do not contain personal/sensitive information:
@@ -46,13 +46,13 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
 * MUST allow users to download key activities (e.g. lessons) for later use offline.
 
 
-# Provider app requirements
+# Provider App Requirements
 
 * MUST support [LTI Assignment and Gradebook Service (AGS)](https://www.imsglobal.org/spec/lti-ags/v2p0), [OneRoster](https://www.1edtech.org/standards/oneroster), and [OAuth](https://oauth.net/2/).
 * SHOULD support [Experience API](https://xapi.com)
 * MAY support [HTTP-IPC](https://github.com/UstadMobile/HTTP-IPC-Spec).
 
-# Consumer app requirements
+# Consumer App Requirements
 
 * Single sign-on:
   * MUST support single sign using [OAuth](https://oauth.net/2/) which MUST work offline if the provider app is installed with app links [HTTP/IPC Spec](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow).
