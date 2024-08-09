@@ -43,12 +43,9 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
 
 # Provider app requirements
 
-* MUST provide operating system manifest information such that consumer apps can detect the presence of the app.
-* When single sign on is requested, MUST show a user interface (if required) to allow the user to accept or decline the request. This can include enforcement of organizational policies
-* MUST return a result that provides an [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow) service
-* MUST provide the OneRoster Roster and Gradebook API to allow a consumer app with a token to store/retrieve information about classes, enrolments, grade level, and student results over the local http url.
-* MUST Provide the Experience API on the local http url to allow a consumer app with a token to store xAPI  statements and all xAPI endpoints (State, Activity Profile, etc).
-* MAY synchronize user data over a local network based on its own security policies to enable users on another device (e.g. a teacher monitoring student progress) to see student progress data without requiring an Internet connection.
+* MUST support OneRoster (including Gradebook API) and OAuth
+* SHOULD support Experience API
+* May support [HTTP-IPC](https://github.com/UstadMobile/HTTP-IPC-Spec).
 
 # Consumer app requirements
 
