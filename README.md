@@ -1,22 +1,34 @@
-# EduCHIP badge
+# EduCHIP compatible
 
-EduCHIP badge is a standard that combines existing edtech and HTTP standards to create apps and content that can work in low resource environments (e.g. limited/no connectivity) AND interoperate so everything *just works* together instead of educators having to re-enter class lists and check multiple dashboards.
+EduCHIP (_Communication Harmonization for Interoperable Programs_) compatible is the use of existing edtech APIs and HTTP standards to create apps and content that can work in low resource environments.
 
-Scenario A: A user (e.g. teacher, student, etc) installs their Learning Management System (LMS) app and a third-party API consumer app (e.g. a math app etc). The student opens the math app and taps "sign in with LMS app". They can then accept/decline permissions requested by the math app. If they accept, they return to the math app. The math app can now access their profile information (e.g. name, grade, etc) without requiring Internet or access or having to re-enter information. The math app can retrieve and save learner progress data from the LMS app. If the student opens the math app on a different device, the LMS app takes care of syncing the latest data, so the user can resume from where they left off on any device. Communication between the apps does not require Internet access.
+Teachers/students/education institutions using EduCHIP compatible apps can:
+* Use one account to access any EduCHIP compatible app
+* Reduce download bandwidth usage/costs 95%+
+* Work offline when connectivity is not available and sync data when a connection is available
+* Keep their data on a server in a location of their choice
 
-This flow achieves the same result as using [OAuth](https://oauth.net/2/) single sign-on and online access to OneRoster and Experience API without requiring Internet access.
+Edtech developers can quickly/easily adapt their apps to use the standards using the upcoming EduCHIP runtime library, allowing their apps to integrate with a variety of Learning Management Systems.
 
-Scenario B: A user (e.g. teacher, student, etc) installs their Learning Management System app and a third party API consumer app. They open their course in the LMS app which lists lessons they are expected to complete. The LMS app launches the math app (e.g. using an Intent) and includes the information the math app requires to access the user learner profile and the id of the lesson. The learner completes their lesson in the math app and then returns to the LMS app when finished.
+## Terminology:
 
-Terminology:
-
-* **Provider app**: the primary app used to manage course enrolments, student information, typically a Learning Management System (LMS) e.g. [Moodle](https://moodle.org), [Ustad Mobile](https://www.ustadmobile.com), etc. or Student Information System (SIS) 
+* **Provider app**: the primary app used to manage course enrolments, student information, typically a Learning Management System (LMS) e.g. [Moodle](https://moodle.org), [Ustad Mobile](https://www.ustadmobile.com), etc. or Student Information System (SIS) e.g. ClassLink
 * **Consumer app**: an education app (such as courseware, eg a math app, other subject app, library app, etc) that will consume information provided from the provider app (as above).
+
+## Scenarios
+
+**Single sign on in consumer app (e.g. math app)**: A user (e.g. teacher, student, etc) installs their provider app (e.g. Learning Management System) and a third-party API consumer app (e.g. a math app etc). The student opens the math app and taps "sign in with LMS app" and completes the OAuth flow. The LMS app _may_ support running the OAuth flow offline using app links. The user then accepts or decline permissions requested by the math app. If accepted, the math app can now access the user profile information (e.g. name, grade, etc). 
+
+If the LMS app is installed and supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec), this can be done entirely offline, otherwise the math app can store/retrieve profile information offline and sync when a connection becomes available.
+
+**User launches consumer app (e.g. math app) from provider app (e.g. LMS)**: The users opens their course in the LMS app which lists lessons they are expected to complete. The LMS app launches the math app (using a URL identifier for a given  content item as per LTI or CMI-5). If the consumer app is installed this will launch the math app using app links. When the user completes the content item they return to the LMS app. 
+
+If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) then data can be sent and received between the apps entirely offline. If not supported, then the math app can store/retrieve profile information offline and sync when a connection becomes available.
 
 # Components
 
-* [HTTP-IPC]([SINGLE-SIGN-ON-OFFLINE-API.md](https://github.com/UstadMobile/HTTP-IPC-Spec)) - Allows a consumer app to communicate with the provider app without requiring Internet access and make API calls using existing standards such as OneRoster, LTI, xAPI, etc.
-* [Resiliant Asset Delivery (RAD)](RAD.md) - Allows a consumer (third party) or provider app to retrieve assets as flexibly as possible; this includes loading via USB stick, retrieving data from nearby devices instead of the Internet where possible to reduce bandwidth usage (e.g. download once instead of 30 times when there are 30 users), and opting in (with user consent) to using a caching http proxy (e.g. if provided on a school network) to load assets that do not contain personal information.
+* [HTTP-IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) - Allows a consumer app to communicate with the provider app without requiring Internet access and make API calls using existing standards such as OneRoster, LTI, xAPI, etc.
+* [Resiliant Asset Delivery (RAD)](RAD.md) - Allows apps to retrieve assets (e.g files over http) as flexibly as possible; this includes loading via USB stick, retrieving data from nearby devices instead of the Internet where possible to reduce bandwidth usage (e.g. download once instead of 30 times when there are 30 users), and opting in (with user consent) to using a caching http proxy (e.g. if provided on a school network) to load assets that do not contain personal information.
 
 # Common requirements
 
