@@ -1,4 +1,4 @@
-# EduCHIP compatible
+# EduCHIP Compatible
 
 EduCHIP (_Communication Harmonization for Interoperable Programs_) compatible is the use of existing edtech APIs and HTTP standards to create apps and content that can work in low resource environments.
 
