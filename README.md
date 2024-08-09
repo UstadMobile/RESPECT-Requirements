@@ -17,11 +17,11 @@ Edtech developers can quickly/easily adapt their apps to use the standards using
 
 ## Scenarios
 
-**Single sign on in consumer app (e.g. math app)**: A user (e.g. teacher, student, etc) installs their provider app (e.g. Learning Management System) and a third-party API consumer app (e.g. a math app etc). The student opens the math app and taps "sign in with LMS app" and completes the OAuth flow. The LMS app _may_ support running the OAuth flow offline using app links. The user then accepts or decline permissions requested by the math app. If accepted, the math app can now access the user profile information (e.g. name, grade, etc). 
+**A) Single sign on in consumer app (e.g. math app)**: A user (e.g. teacher, student, etc) installs their provider app (e.g. Learning Management System) and a third-party API consumer app (e.g. a math app etc). The student opens the math app and taps "sign in with LMS app" and completes the OAuth flow. The LMS app _may_ support running the OAuth flow offline using app links. The user then accepts or decline permissions requested by the math app. If accepted, the math app can now access the user profile information (e.g. name, grade, etc). 
 
 If the LMS app is installed and supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec), this can be done entirely offline, otherwise the math app can store/retrieve profile information offline and sync when a connection becomes available.
 
-**User launches consumer app (e.g. math app) from provider app (e.g. LMS)**: The users opens their course in the LMS app which lists lessons they are expected to complete. The LMS app launches the math app (using a URL identifier for a given  content item as per LTI or CMI-5). If the consumer app is installed this will launch the math app using app links. When the user completes the content item they return to the LMS app. 
+**B) User launches consumer app (e.g. math app) from provider app (e.g. LMS)**: The users opens their course in the LMS app which lists lessons they are expected to complete. The LMS app launches the math app (using a URL identifier for a given  content item as per LTI or CMI-5). If the consumer app is installed this will launch the math app using app links. When the user completes the content item they return to the LMS app. 
 
 If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) then data can be sent and received between the apps entirely offline. If not supported, then the math app can store/retrieve profile information offline and sync when a connection becomes available.
 
@@ -50,7 +50,7 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
 # Consumer app requirements
 
 * Single sign-on:
-  * MUST support single sign using [OAuth](https://oauth.net/2/) which MUST work offline if the provider app is installed as per [HTTP/IPC Spec](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow).
+  * MUST support single sign using [OAuth](https://oauth.net/2/) which MUST work offline if the provider app is installed with app links [HTTP/IPC Spec](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow).
   * MUST use [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow) to access REST APIs offline where the service is offered by the provider app
   * MUST support using the OneRoster API to retrieve information defined using the OneRoster standard (e.g. grade level, enrolments etc) where this information is required, except if the consumer app is only used via the provider app (e.g. Scenario B only)
   * MAY ask the user additional information that is not part of the OneRoster standard (e.g. "How much do you like math?")  
