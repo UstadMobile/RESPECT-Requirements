@@ -33,13 +33,18 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
 # Common requirements
 
 * Simple to use (metrics to be determined e.g. number of clicks to accomplish common tasks)
+* For all HTTP downloads that do not contain personal/sensitive information:
+  * The response body of any given URL must not vary based on request headers (e.g. it must not vary based on client user-agent etc) such that it can be shared with other devices.
+  * The ```cache-control: public``` directive must be included in the HTTP response.
+  * The server MUST support HTTP partial range requests (all major web servers including Apache, Nginx, etc already support this)
 * Installed size MUST be not more than 25% higher Google build for billions guidelines
 * 15 minutes of usage MUST use less than 25MB of data on average
   * E.g. A parent with a bundle of half the average data usage in Sub-Saharan Africa allocates 20% of their data to education and has 5 children, each of whom use the app for 15mins/day at home.
   * Data downloaded using with the ```cache-control: public``` where a user can opt-in to using a proxy cache  (e.g. as per [Resiliant Asset Delivery (RAD)](RAD.md)) shall not count towards the total.
 * 15 minutes of usage by 5 devices carrying out the same activities nearby with WiFi and Bluetooth switched on must use less than 35MB of data
   * E.g. the app should support peer-to-peer sharing of assets that do not contain personally identifiable information in school scenarios to reduce bandwidth usage. 
-* MUST allow users to download key activities (e.g. lessons) for later use offline. 
+* MUST allow users to download key activities (e.g. lessons) for later use offline.
+
 
 # Provider app requirements
 
@@ -58,9 +63,6 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
   * MUST store all profile information required for the user to resume subsequent sessions using the OneRoster and/or Experience API (e.g. to allow the user to resume a session on a different device).
   * MUST store learner progress data using the [LTI Assignment and Gradebook Service (AGS)](https://www.imsglobal.org/spec/lti-ags/v2p0).
   * SHOULD store granular learner activity data using [Experience API statements](https://www.xapi.com/) (e.g. when a user answers a question) or [Caliper Analytics](https://www.1edtech.org/standards/caliper).
-* Asset download
-  * MUST download all assets via HTTP/HTTPS GET requests (e.g.such that [Resilient Asset Delivery](RAD.md) can be used). The body of each URL must be the same regardless of request headers (e.g. it must not vary based on client types etc) such that it can be shared with other devices.
-  * HTTP requests for assets that do not contain sensitive information MUST contain the ```cache-control: public``` directive in the response.
 * Offline support
   * MUST be able to function fully offline where LTI and OneRoster are provided via [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) and any http assets have been pre-downloaded.
 * Other
