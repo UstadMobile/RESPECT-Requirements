@@ -48,9 +48,9 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
 
 # Provider app requirements
 
-* MUST support OneRoster (including Gradebook API) and OAuth
-* SHOULD support Experience API
-* May support [HTTP-IPC](https://github.com/UstadMobile/HTTP-IPC-Spec).
+* MUST support [LTI Assignment and Gradebook Service (AGS)](https://www.imsglobal.org/spec/lti-ags/v2p0), [OneRoster](https://www.1edtech.org/standards/oneroster), and [OAuth](https://oauth.net/2/).
+* SHOULD support [Experience API](https://xapi.com)
+* MAY support [HTTP-IPC](https://github.com/UstadMobile/HTTP-IPC-Spec).
 
 # Consumer app requirements
 
