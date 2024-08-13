@@ -10,7 +10,7 @@ Teachers/students/education institutions using EduCHIP compatible apps can:
 
 The upcoming _EduCHIP runtime library_ will make it easy for edtech developers to make their apps work smoothly in offline and limited connectivity settings by:
 * Automatically downloading and verifying downloads from nearby devices instead of from the Internet where available (e.g. where 2 or more students are accessing the same lesson)
-* Allowing developers to bundle a list of URLs (links) into a file that then be saved/loaded from a USB stick / SD card so content (e.g. lessons etc) can run be easily pre-loaded for offline use
+* Allowing developers to bundle a list of URLs (links) into a file that can then be saved/loaded from a USB stick / SD card so content (e.g. lessons etc) can be easily pre-loaded for offline use
 * Automatically handling synchronization of learner progress data to/from a Learning Management System. 
 
 ## Terminology:
