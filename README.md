@@ -39,7 +39,7 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
 * For all HTTP downloads that do not contain personal/sensitive information:
   * The response body of any given URL must not vary based on request headers (e.g. it must not vary based on client user-agent etc) such that it can be shared with other devices.
   * The ```cache-control: public``` directive must be included in the HTTP response.
-  * The server MUST support HTTP partial range requests (all major web servers including Apache, Nginx, etc already support this)
+  * The server MUST support [HTTP range requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests) (all major web servers including Apache, Nginx, etc already support this)
 * Installed size MUST be not more than 25% higher Google build for billions guidelines
 * 15 minutes of usage MUST use less than 25MB of data on average
   * E.g. A parent with a bundle of half the average data usage in Sub-Saharan Africa allocates 20% of their data to education and has 5 children, each of whom use the app for 15mins/day at home.
