@@ -1,14 +1,14 @@
-# EduCHIP Compatible
+# RESPECT Compatible
 
-EduCHIP (_Communication Harmonization for Interoperable Programs_) compatible is the use of existing edtech APIs and HTTP standards to create apps and content that can work in low resource environments.
+RESPECT (_Resilient Edtech Standard Platform for Educational Courseware and Technologies_) compatible is the use of existing edtech APIs and HTTP standards to create apps and content that can work in low resource environments.
 
-Teachers/students/education institutions using EduCHIP compatible apps can:
-* Use one account to access any EduCHIP compatible app
+Teachers/students/education institutions using RESPECT compatible apps can:
+* Use one account to access any RESPECT compatible app
 * Reduce download bandwidth usage/costs 95%+
 * Work offline when connectivity is not available and sync data when a connection is available
 * Keep their data on a server in a location of their choice
 
-The upcoming _EduCHIP runtime library_ will make it easy for edtech developers to make their apps work smoothly in offline and limited connectivity settings by:
+The upcoming _RESPECT runtime library_ will make it easy for edtech developers to make their apps work smoothly in offline and limited connectivity settings by:
 * Automatically downloading and verifying downloads from nearby devices instead of from the Internet where available (e.g. where 2 or more students are accessing the same lesson)
 * Allowing developers to bundle a list of URLs (links) into a file that can then be saved/loaded from a USB stick / SD card so content (e.g. lessons etc) can be easily pre-loaded for offline use
 * Automatically handling synchronization of learner progress data to/from a Learning Management System. 
