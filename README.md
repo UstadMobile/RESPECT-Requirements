@@ -1,17 +1,19 @@
 # RESPECT Compatible
 
-RESPECT (_Resilient Edtech Standard Platform for Educational Courseware and Technologies_) compatible is the use of existing edtech APIs and HTTP standards to create apps and content that can work in low resource environments.
+RESPECT (_Resilient Edtech Standard Platform for Educational Courseware and Technologies_) is a set of requirements (including the use of existing open-standard edtech APIs) for edtech apps to deliver a high quality experience in Low and Middle Income Country (LMIC) markets.
 
-Teachers/students/education institutions using RESPECT compatible apps can:
-* Use one account to access any RESPECT compatible app
+Teachers/students/education institutions using apps that meet the RESPECT requirements can:
+* Use one account to access any RESPECT compliant app
 * Reduce download bandwidth usage/costs 95%+
 * Work offline when connectivity is not available and sync data when a connection is available
 * Keep their data on a server in a location of their choice
+* Install the app on almost any phone/device they are likely to have because the app will be sufficiently small, fast, and light
 
-The upcoming _RESPECT runtime library_ will make it easy for edtech developers to make their apps work smoothly in offline and limited connectivity settings by:
-* Automatically downloading and verifying downloads from nearby devices instead of from the Internet where available (e.g. where 2 or more students are accessing the same lesson)
-* Allowing developers to bundle a list of URLs (links) into a file that can then be saved/loaded from a USB stick / SD card so content (e.g. lessons etc) can be easily pre-loaded for offline use
-* Automatically handling synchronization of learner progress data to/from a Learning Management System. 
+The upcoming [libRESPECT](https://github.com/UstadMobile/librespect) library will provide edtech developers with an easy-to-use open-source component they can easily embed in their own apps to meet the RESPECT requirements. libRESPECT can help manage offline content download, caching, and synchronization of learner progress data.
+
+# Technical requirements
+
+The technical requirements are a set of objective criteria that can be applied to an edtech app to determine if it meets the RESPECT requirements.
 
 ## Terminology:
 
@@ -28,12 +30,7 @@ If the LMS app is installed and supports [HTTP/IPC](https://github.com/UstadMobi
 
 If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) then data can be sent and received between the apps entirely offline. If not supported, then the math app can store/retrieve profile information offline and sync when a connection becomes available.
 
-# Components
-
-* [HTTP-IPC](https://github.com/UstadMobile/HTTP-IPC-Spec) - Allows a consumer app to communicate with the provider app without requiring Internet access and make API calls using existing standards such as OneRoster, LTI, xAPI, etc.
-* [Resiliant Asset Delivery (RAD)](RAD.md) - Allows apps to retrieve assets (e.g files over http) as flexibly as possible; this includes loading via USB stick, retrieving data from nearby devices instead of the Internet where possible to reduce bandwidth usage (e.g. download once instead of 30 times when there are 30 users), and opting in (with user consent) to using a caching http proxy (e.g. if provided on a school network) to load assets that do not contain personal information.
-
-# Common Requirements
+## Common Requirements
 
 * Simple to use (metrics to be determined e.g. number of clicks to accomplish common tasks)
 * For all HTTP downloads that do not contain personal/sensitive information:
@@ -48,14 +45,13 @@ If the LMS app supports [HTTP/IPC](https://github.com/UstadMobile/HTTP-IPC-Spec)
   * E.g. the app should support peer-to-peer sharing of assets that do not contain personally identifiable information in school scenarios to reduce bandwidth usage. 
 * MUST allow users to download key activities (e.g. lessons) for later use offline.
 
-
-# Provider App Requirements
+## Provider App Requirements
 
 * MUST support [LTI Assignment and Gradebook Service (AGS)](https://www.imsglobal.org/spec/lti-ags/v2p0), [OneRoster](https://www.1edtech.org/standards/oneroster), and [OAuth](https://oauth.net/2/).
 * SHOULD support [Experience API](https://xapi.com)
 * MAY support [HTTP-IPC](https://github.com/UstadMobile/HTTP-IPC-Spec).
 
-# Consumer App Requirements
+## Consumer App Requirements
 
 * Single sign-on:
   * MUST support single sign using [OAuth](https://oauth.net/2/) which MUST work offline if the provider app is installed with app links [HTTP/IPC Spec](https://github.com/UstadMobile/HTTP-IPC-Spec?tab=readme-ov-file#offline-oauth-flow).
