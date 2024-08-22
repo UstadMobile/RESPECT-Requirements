@@ -1,6 +1,9 @@
 # RESPECT Requirements
 
-RESPECT (_Resilient Edtech Standard Platform for Educational Courseware and Technologies_) is a set of technical requirements (including the use of existing open-standard edtech APIs) for edtech apps to deliver a high quality experience in Low and Middle Income Country (LMIC) markets.
+RESPECT (_Resilient Edtech Standard Platform for Educational Courseware and Technologies_) is a set of technical requirements for edtech apps to deliver a high quality experience in Low and Middle Income Country (LMIC) markets. Common user challenges in these markets include:
+* __Limited connectivity__: users often have data download limits. Connections may be slow or unreliable, especially in rural areas. Some users may have only occassional or no access to connectivity. Users typically have to pay more when they download more.
+* __Device capacity__: phones have less memory and slower processors on average than higher income markets.
+* __Fewer opportunities to recharge__: users in areas without reliable grid power might not be able to charge their phone as regularly.
 
 Teachers/students/education institutions using apps that meet the RESPECT requirements can:
 * Use one account to access any RESPECT compliant app
@@ -8,6 +11,7 @@ Teachers/students/education institutions using apps that meet the RESPECT requir
 * Work offline when connectivity is not available and sync data when a connection is available
 * Keep their data on a server in a location of their choice
 * Install the app on almost any phone/device they are likely to have because the app will be sufficiently small, fast, and light
+* Expect apps to work together; for example if they complete a lesson in a math app their grade should appear in their learning management system. 
 
 The upcoming [libRESPECT](https://github.com/UstadMobile/librespect) library will provide edtech developers with an easy-to-use open-source component they can easily embed in their own apps to meet the RESPECT requirements. libRESPECT can help manage offline content download, caching, and synchronization of learner progress data.
 
