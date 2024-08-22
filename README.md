@@ -11,7 +11,7 @@ Teachers/students/education institutions using apps that meet the RESPECT requir
 
 The upcoming [libRESPECT](https://github.com/UstadMobile/librespect) library will provide edtech developers with an easy-to-use open-source component they can easily embed in their own apps to meet the RESPECT requirements. libRESPECT can help manage offline content download, caching, and synchronization of learner progress data.
 
-# Technical requirements
+# Technical Requirements
 
 The technical requirements are a set of objective criteria that can be applied to an edtech app to determine if it meets the RESPECT requirements.
 
