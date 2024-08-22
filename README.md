@@ -1,6 +1,6 @@
 # RESPECT Requirements
 
-RESPECT (_Resilient Edtech Standard Platform for Educational Courseware and Technologies_) is a set of technical requirements for edtech apps to deliver a high quality experience in Low and Middle Income Country (LMIC) markets. Common user challenges in these markets include:
+RESPECT (_Resilient Edtech Standard Platform for Educational Courseware and Technologies_) is a set of technical requirements to ensure edtech apps to deliver a high quality experience in Low and Middle Income Country (LMIC) markets. Common user challenges in these markets include:
 * __Limited connectivity__: users often have data download limits. Connections may be slow or unreliable, especially in rural areas. Some users may have only occassional or no access to connectivity. Users typically have to pay more when they download more.
 * __Device capacity__: phones have less memory and slower processors on average than higher income markets.
 * __Fewer opportunities to recharge__: users in areas without reliable grid power might not be able to charge their phone as regularly.
