@@ -1,4 +1,4 @@
-# RESPECT Compatible
+# RESPECT Requirements
 
 RESPECT (_Resilient Edtech Standard Platform for Educational Courseware and Technologies_) is a set of requirements (including the use of existing open-standard edtech APIs) for edtech apps to deliver a high quality experience in Low and Middle Income Country (LMIC) markets.
 
