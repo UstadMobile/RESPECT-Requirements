@@ -3,20 +3,20 @@
 RESPECT (_Resilient Edtech Standards Project for Educational Courseware and Technologies_) is a set of technical requirements to ensure edtech apps perform well in scenarios common in low and middle income countries (LMIC) such as:
 
 * __When Internet access is slow or unreliable:__ teachers and students need to be able use edtech apps without interruption, even when connectivity is slow, unreliable, or intermittent.
-* __When Internet access is relatively expensive:__ teachers and parents want apps to reduce download data usage to avoid having to spend more on mobile credit.
-* __When teachers and students want to use multiple apps__: they don't want to have to re-enter profile and class details. Different apps can handle different subjects (e.g. math, science, language) or use cases (eg homework submission). Users want be able to use a single account, and each app should automatically receive the required profile information (name, role, class enrollments, etc) when the user grants permission.
+* __When Internet data is expensive:__ teachers and parents want apps to reduce download data usage to avoid having to spend more on mobile data.
+* __When teachers and students use multiple apps__: they don't want to have to re-enter profile and class details in each app. Apps should retrieve the required profile information (name, role, class enrollments, etc) from a common source when the user grants permission.
 * __When phones have limited capacity__: teachers and students need apps that are small enough, light enough, and fast enough to fit on their phone and load quickly
 * __When students and teachers want to view progress__: they should be able to see progress information from multiple apps in one place. It should be possible an education organisation to decide where personal data is stored.
 
-Teachers/students/education institutions using apps that meet the RESPECT requirements can:
-* Use one account to access any RESPECT compliant app
-* Reduce download bandwidth usage/costs 95%+
+Apps that are compatible with the RESPECT requirements (that is, are "RESPECT Compatible") enable teachers, students, and schools to:
+* Use one account to access any RESPECT Compatible app
+* Reduce download bandwidth usage/costs by 95%
 * Work offline when connectivity is not available and sync data when a connection is available
 * Keep their data on a server in a location of their choice
-* Install the app on almost any phone/device they are likely to have because the app will be sufficiently small, fast, and light
+* Install their apps on old, cheap devices because the apps will be sufficiently small, fast, and light
 * Expect apps to work together; for example if they complete a lesson in a math app their grade should appear in their learning management system. 
 
-The upcoming [libRESPECT](https://github.com/UstadMobile/librespect) library will provide edtech developers with an easy-to-use open-source component they can easily embed in their own apps to meet the RESPECT requirements. libRESPECT can help manage offline content download, caching, and synchronization of learner progress data.
+The forthcoming [libRESPECT](https://github.com/UstadMobile/librespect) code library will provide edtech developers with an easy-to-use open-source component they can embed in their own apps to meet the RESPECT requirements. libRESPECT can help manage offline content download, caching, local mesh networking, and synchronization to maximize these benefits.
 
 # Technical Requirements
 
